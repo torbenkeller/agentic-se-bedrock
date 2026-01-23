@@ -1,0 +1,43 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
+{
+	"name": "Node.js",
+
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"anthropic.claude-code",
+				"vitest.explorer",
+				"esbenp.prettier-vscode",
+				"EditorConfig.EditorConfig",
+				"DavidAnson.vscode-markdownlint",
+				"bierner.markdown-mermaid"
+			]
+		}
+	},
+	"secrets": {
+	  "AWS_BEARER_TOKEN_BEDROCK": {
+	    "description": "Hier musst du den API-Key eintragen. Du bekommst ihn von einem Trainer"
+	  }
+	},
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/devcontainers-extra/features/tfsec:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers-extra/features/act:1": {}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [],
+
+	"containerEnv": {
+		"ANTHROPIC_API_KEY": "1234",
+		"CLAUDE_CODE_USE_BEDROCK": "1",
+ 		"AWS_REGION": "eu-central-1"
+	}
+}

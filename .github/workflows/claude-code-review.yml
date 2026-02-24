@@ -74,6 +74,7 @@ jobs:
           AWS_BEARER_TOKEN_BEDROCK: ${{ secrets.AWS_BEARER_TOKEN_BEDROCK }}
         with:
           use_bedrock: "true"
+          claude_args: '--model eu.anthropic.claude-sonnet-4-6'
           prompt: |
             REPO: ${{ github.repository }}
             PR NUMBER: ${{ github.event.pull_request.number }}

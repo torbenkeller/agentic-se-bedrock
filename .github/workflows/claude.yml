@@ -41,6 +41,7 @@ jobs:
           AWS_BEARER_TOKEN_BEDROCK: ${{ secrets.AWS_BEARER_TOKEN_BEDROCK }}
         with:
           use_bedrock: "true"
+          claude_args: '--model eu.anthropic.claude-sonnet-4-6'
 
           # This is an optional setting that allows Claude to read CI results on PRs
           additional_permissions: |
